@@ -5,9 +5,14 @@
   background: #b0abab;
   background: radial-gradient(
     circle,
-    rgba(176, 171, 171, 1) 0%,
+    rgb(220, 217, 217) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+}
+
+.titulo{
+  color: #000c91;
+  font-family: "Elms Sans", sans-serif;
 }
 
 .contenidoPrincipal {
@@ -16,4 +21,15 @@
 
 .cardLogin {
   width: 550px;
+}
+
+.cardMenu{
+  background-color: rgb(241, 241, 241);
+  border: 2px rgb(216, 216, 217) groove;
+}
+
+.cardMenu:hover{
+  transform: scale(1.02);
+  transition: 0.5s;
+  border: 2px rgb(165, 207, 255) groove!important;
 }
