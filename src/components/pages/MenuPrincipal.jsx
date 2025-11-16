@@ -11,7 +11,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-people fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-people fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#4051B7" }}
             ></i>
           </div>
@@ -21,7 +21,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-suitcase-lg fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-suitcase-lg fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#03877B" }}
             ></i>
           </div>
@@ -31,7 +31,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-grid fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-grid fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#5D35B0" }}
             ></i>
           </div>
@@ -42,7 +42,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-person-check fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-person-check fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#1D88E5" }}
             ></i>
           </div>
@@ -52,7 +52,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-calendar-check fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-calendar-check fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#459F46" }}
             ></i>
           </div>
@@ -62,7 +62,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-file-earmark-text fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-file-earmark-text fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#FD8B00" }}
             ></i>
           </div>
@@ -73,7 +73,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-clipboard2 fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-clipboard2 fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#E43A33" }}
             ></i>
           </div>
@@ -83,7 +83,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-currency-dollar fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-currency-dollar fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#6D4D40" }}
             ></i>
           </div>
@@ -93,7 +93,7 @@ const MenuPrincipal = () => {
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">
           <div className="my-3">
             <i
-              class="bi bi-bar-chart fs-4 text-light py-3 px-4 rounded-4"
+              className="bi bi-bar-chart fs-4 text-light py-3 px-4 rounded-4"
               style={{ backgroundColor: "#546F7A" }}
             ></i>
           </div>
