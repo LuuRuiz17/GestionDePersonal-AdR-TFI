@@ -16,7 +16,7 @@ const LoginEmpleados = () => {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Número de legajo</Form.Label>
                 <InputGroup className="mb-3">
-                  <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                  <InputGroup.Text id="basic-addon1"><i class="bi bi-people"></i></InputGroup.Text>
                   <Form.Control
                     placeholder="Ej: 1234"
                     aria-label="Username"
