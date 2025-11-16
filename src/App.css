@@ -33,3 +33,13 @@
   transition: 0.5s;
   border: 2px rgb(165, 207, 255) groove!important;
 }
+
+.contenedor-info{
+  width: 103%!important;
+}
+
+@media (max-width: 576px) {
+  .titulo{
+    text-align: center !important;
+  }
+}

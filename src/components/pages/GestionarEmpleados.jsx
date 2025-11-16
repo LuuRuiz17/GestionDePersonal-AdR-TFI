@@ -1,17 +1,17 @@
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 const GestionarEmpleados = () => {
   return (
     <>
-      <Container className="my-4 px-3">
-        <h1 className="titulo">Gestionar Empleados</h1>
-        <h5 className="titulo">Seleccione la acción que desea realizar</h5>
+      <Container className="my-4 px-3 d-flex flex-column justify-content-center align-items-center">
 
-        <Row className="justify-content-center mt-4 g-3 flex-lg-nowrap">
+        <h1 className="titulo text-md-start w-100 me-md-4">Gestionar Empleados</h1>
+        <h5 className="titulo text-md-start w-100 me-md-4">Seleccione la acción que desea realizar</h5>
+
+        <Row className="justify-content-center mt-4 gap-3 flex-md-nowrap flex-lg-nowrap w-100">
           <Col
-            xs={12}
             md={4}
-            className="bg-light px-3 py-5 rounded-4 cardMenu me-lg-3"
+            className="bg-light px-3 py-5 rounded-4 cardMenu"
           >
             <div className="my-3 text-center mb-4">
               <i
@@ -26,9 +26,8 @@ const GestionarEmpleados = () => {
           </Col>
 
           <Col
-            xs={12}
             md={4}
-            className="bg-light px-3 py-5 rounded-4 cardMenu me-lg-3"
+            className="bg-light px-3 py-5 rounded-4 cardMenu"
           >
             <div className="my-3 text-center mb-4">
               <i
@@ -42,7 +41,10 @@ const GestionarEmpleados = () => {
             </p>
           </Col>
 
-          <Col xs={12} md={4} className="bg-light px-3 py-5 rounded-4 cardMenu">
+          <Col
+            md={4}
+            className="bg-light px-3 py-5 rounded-4 cardMenu"
+          >
             <div className="my-3 text-center mb-4">
               <i
                 className="bi bi-person-dash fs-4 text-light py-3 px-4 rounded-4"
@@ -54,21 +56,21 @@ const GestionarEmpleados = () => {
           </Col>
         </Row>
 
-        <Row className="mb-3 p-4 bg-light rounded-4 cardMenu mt-4">
-          <Col>
+        <Row className="mt-4 contenedor-info">
+          <Col className="bg-light rounded-4 cardMenu p-4">
             <h4 className="mb-4">Información Importante</h4>
 
-            <p className="ms-4">
+            <p>
               <b>Agregar:</b> Complete todos los datos requeridos del nuevo
               empleador
             </p>
 
-            <p className="ms-4">
+            <p>
               <b>Editar:</b> Busque el empleado por legajo o nombre para
               modificar sus datos
             </p>
 
-            <p className="ms-4">
+            <p>
               <b>Eliminar:</b> La eliminación es permanente. Asegúrese de
               confirmar la acción
             </p>
