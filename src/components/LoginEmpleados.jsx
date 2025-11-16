@@ -1,4 +1,4 @@
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Form, InputGroup  } from "react-bootstrap";
 
 const LoginEmpleados = () => {
   return (
@@ -12,11 +12,33 @@ const LoginEmpleados = () => {
                 Ingrese sus credenciales para acceder al sistema
               </p>
             </div>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Número de legajo</Form.Label>
+                <InputGroup className="mb-3">
+                  <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                  <Form.Control
+                    placeholder="Ej: 1234"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </InputGroup>
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Ingrese su contraseña"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
           </Card.Body>
         </Card>
       </Container>
