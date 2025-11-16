@@ -7,13 +7,11 @@ const GestionarEmpleados = () => {
         <h1 className="titulo">Gestionar Empleados</h1>
         <h5 className="titulo">Seleccione la acción que desea realizar</h5>
 
-        <Row className="justify-content-center mt-4 g-3 flex-nowrap">
+        <Row className="justify-content-center mt-4 g-3 flex-lg-nowrap">
           <Col
             xs={12}
-            sm={4}
             md={4}
-            lg={4}
-            className="bg-light px-3 py-5 rounded-4 cardMenu me-2"
+            className="bg-light px-3 py-5 rounded-4 cardMenu me-lg-3"
           >
             <div className="my-3 text-center mb-4">
               <i
@@ -29,10 +27,8 @@ const GestionarEmpleados = () => {
 
           <Col
             xs={12}
-            sm={4}
             md={4}
-            lg={4}
-            className="bg-light px-3 py-5 rounded-4 cardMenu me-2"
+            className="bg-light px-3 py-5 rounded-4 cardMenu me-lg-3"
           >
             <div className="my-3 text-center mb-4">
               <i
@@ -46,13 +42,7 @@ const GestionarEmpleados = () => {
             </p>
           </Col>
 
-          <Col
-            xs={12}
-            sm={4}
-            md={4}
-            lg={4}
-            className="bg-light px-3 py-5 rounded-4 cardMenu"
-          >
+          <Col xs={12} md={4} className="bg-light px-3 py-5 rounded-4 cardMenu">
             <div className="my-3 text-center mb-4">
               <i
                 className="bi bi-person-dash fs-4 text-light py-3 px-4 rounded-4"
@@ -67,14 +57,17 @@ const GestionarEmpleados = () => {
         <Row className="mb-3 p-4 bg-light rounded-4 cardMenu mt-4">
           <Col>
             <h4 className="mb-4">Información Importante</h4>
+
             <p className="ms-4">
               <b>Agregar:</b> Complete todos los datos requeridos del nuevo
               empleador
             </p>
+
             <p className="ms-4">
               <b>Editar:</b> Busque el empleado por legajo o nombre para
               modificar sus datos
             </p>
+
             <p className="ms-4">
               <b>Eliminar:</b> La eliminación es permanente. Asegúrese de
               confirmar la acción
