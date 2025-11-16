@@ -1,0 +1,19 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #b0abab;
+  background: radial-gradient(
+    circle,
+    rgba(176, 171, 171, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.contenidoPrincipal {
+  flex-grow: 1;
+}
+
+.cardLogin {
+  width: 550px;
+}
