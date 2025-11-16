@@ -1,4 +1,4 @@
-import { Container, Card, Button, Form, InputGroup } from "react-bootstrap";
+import {Card, Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginEmpleados = () => {
   return (
@@ -19,7 +19,7 @@ const LoginEmpleados = () => {
                 <InputGroup.Text id="basic-addon1">
                   <i className="bi bi-people"></i>
                 </InputGroup.Text>
-                <Form.Control placeholder="Ej: 1234" type="text" required />
+                <Form.Control placeholder="Ej: 1234" type="text" required minLength={4} maxLength={7} />
               </InputGroup>
             </Form.Group>
 
@@ -33,6 +33,8 @@ const LoginEmpleados = () => {
                   type="password"
                   placeholder="Ingrese su contraseña"
                   required
+                  minLength={3}
+                  maxLength={10}
                 />
               </InputGroup>
             </Form.Group>
