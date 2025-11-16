@@ -8,8 +8,6 @@ import GestionarEmpleados from "./components/pages/GestionarEmpleados";
 function App() {
   return (
     <>
-      {/* <MenuPrincipal /> */}
-      <GestionarEmpleados />
     </>
   );
 }
