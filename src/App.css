@@ -10,10 +10,25 @@
   );
 }
 
+.titulo{
+  color: black;
+  font-family: "Elms Sans", sans-serif;
+}
+
 .contenidoPrincipal {
   flex-grow: 1;
 }
 
 .cardLogin {
   width: 550px;
+}
+
+.cardMenu{
+  background-color: rgb(241, 241, 241);
+  border: 2px rgb(217, 216, 216) groove;
+}
+
+.cardMenu:hover{
+  transform: scale(1.02);
+  transition: 0.5s;
 }
