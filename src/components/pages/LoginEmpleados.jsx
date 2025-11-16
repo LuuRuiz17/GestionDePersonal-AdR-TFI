@@ -2,7 +2,7 @@ import { Container, Card, Button, Form, InputGroup  } from "react-bootstrap";
 
 const LoginEmpleados = () => {
   return (
-    <section className="contenidoPrincipal">
+    <section className="contenidoPrincipal d-flex justify-content-center align-items-center">
       <Container>
         <Card style={{ width: "18rem" }}>
           <Card.Body>
@@ -19,24 +19,26 @@ const LoginEmpleados = () => {
                   <InputGroup.Text id="basic-addon1"><i class="bi bi-people"></i></InputGroup.Text>
                   <Form.Control
                     placeholder="Ej: 1234"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
+                    type="text"
+                    required
                   />
                 </InputGroup>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Contraseña</Form.Label>
-                <Form.Control
+                <InputGroup className="mb-3">
+                  <InputGroup.Text id="basic-addon1"><i class="bi bi-lock-fill"></i></InputGroup.Text>
+                  <Form.Control
                   type="password"
-                  placeholder="Ingrese su contraseña"
-                />
+                    placeholder="Ingrese su contraseña"
+                    required
+                  />
+                </InputGroup>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
+              
               <Button variant="primary" type="submit">
-                Submit
+                Iniciar Sesión
               </Button>
             </Form>
           </Card.Body>
