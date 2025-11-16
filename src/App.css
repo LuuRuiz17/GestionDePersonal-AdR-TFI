@@ -10,7 +10,7 @@
   );
 }
 
-.titulo{
+.titulo {
   color: #000c91;
   font-family: "Elms Sans", sans-serif;
 }
@@ -23,23 +23,30 @@
   width: 550px;
 }
 
-.cardMenu{
+.cardMenu {
   background-color: rgb(241, 241, 241);
   border: 2px rgb(216, 216, 217) groove;
 }
 
-.cardMenu:hover{
+.cardMenu:hover {
   transform: scale(1.02);
   transition: 0.5s;
-  border: 2px rgb(165, 207, 255) groove!important;
-}
-
-.contenedor-info{
-  width: 103%!important;
+  border: 2px rgb(165, 207, 255) groove !important;
 }
 
 @media (max-width: 576px) {
-  .titulo{
+  .titulo {
     text-align: center !important;
   }
+  .contenedor-info {
+    width: 101% !important;
+  }
 }
+@media (min-width: 577px) {
+
+  .contenedor-info {
+    width: 102.5% !important;
+  }
+}
+
+

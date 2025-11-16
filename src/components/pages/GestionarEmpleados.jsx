@@ -60,17 +60,17 @@ const GestionarEmpleados = () => {
           <Col className="bg-light rounded-4 cardMenu p-4">
             <h4 className="mb-4">Información Importante</h4>
 
-            <p>
+            <p className="ms-4">
               <b>Agregar:</b> Complete todos los datos requeridos del nuevo
               empleador
             </p>
 
-            <p>
+            <p className="ms-4">
               <b>Editar:</b> Busque el empleado por legajo o nombre para
               modificar sus datos
             </p>
 
-            <p>
+            <p className="ms-4">
               <b>Eliminar:</b> La eliminación es permanente. Asegúrese de
               confirmar la acción
             </p>
