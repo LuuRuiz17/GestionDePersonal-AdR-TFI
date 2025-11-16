@@ -36,7 +36,7 @@ const MenuPrincipal = () => {
             ></i>
           </div>
           <h5 className="mt-4">Consultar Sector</h5>
-          <p>Ver lightrmación de sectores</p>
+          <p>Ver información de sectores</p>
         </Col>
 
         <Col md={3} className="cardMenu p-3 m-1 rounded-4 text-center">

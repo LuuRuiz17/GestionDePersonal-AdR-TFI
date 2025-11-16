@@ -5,14 +5,15 @@
   background: #b0abab;
   background: radial-gradient(
     circle,
-    rgba(176, 171, 171, 1) 0%,
+    rgb(220, 217, 217) 0%,
     rgba(148, 187, 233, 1) 100%
   );
 }
 
 .titulo{
-  color: black;
+  color: #000c91;
   font-family: "Elms Sans", sans-serif;
+  text-shadow: 15px 0px 15px rgb(255, 255, 255);
 }
 
 .contenidoPrincipal {
