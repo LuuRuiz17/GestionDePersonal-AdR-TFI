@@ -26,10 +26,11 @@
 
 .cardMenu{
   background-color: rgb(241, 241, 241);
-  border: 2px rgb(217, 216, 216) groove;
+  border: 2px rgb(216, 216, 217) groove;
 }
 
 .cardMenu:hover{
   transform: scale(1.02);
   transition: 0.5s;
+  border: 2px rgb(165, 207, 255) groove!important;
 }
