@@ -2,10 +2,10 @@ package com.adminrec.tfi.controllers;
 
 import com.adminrec.tfi.entities.Cuenta;
 import com.adminrec.tfi.entities.Empleado;
-import com.adminrec.tfi.security.dtos.LoginDTO;
 import com.adminrec.tfi.services.ServicioCuenta;
 import com.adminrec.tfi.util.JwtUtil;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -22,17 +22,19 @@ public class AccountController {
         this.jwtUtil = jwtUtil;
     }
 
+    public record AccountRequest(Integer dni, String contrasena) {}
+
     @PostMapping("/login")
-    public ResponseEntity<Map<String, Object>> login(@RequestBody LoginDTO credentials) {
+    public ResponseEntity<?> login(@RequestBody AccountRequest credentials) {
         Map<String, Object> response = new HashMap<>();
 
         try {
-            Cuenta cuenta = servicio.iniciarSesion(credentials.getDniEmpleado(), credentials.getContrasena());
+            Cuenta cuenta = servicio.iniciarSesion(credentials.dni(), credentials.contrasena());
 
             Map<String, Object> claims = new HashMap<>();
             claims.put("role", cuenta.getRol());
 
-            Empleado empleado = servicio.obtenerEmpleadoAsociado(credentials.getDniEmpleado());
+            Empleado empleado = servicio.obtenerEmpleadoAsociado(credentials.dni());
             claims.put("employee_complete_name", empleado.getApellido() + ", " + empleado.getNombre());
             claims.put("employee_dni", empleado.getDni());
 

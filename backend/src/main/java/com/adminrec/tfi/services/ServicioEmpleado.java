@@ -23,11 +23,18 @@ public class ServicioEmpleado {
     private final RepositorioEmpleados repositorioEmpleados;
     private final RepositorioPuestos repositorioPuestos;
     private final RepositorioIngresoEgreso repositorioIngresoEgreso;
+    private final ServicioCuenta servicioCuenta;
 
-    public ServicioEmpleado(RepositorioEmpleados repositorioEmpleados,  RepositorioPuestos repositorioPuestos, RepositorioIngresoEgreso repositorioIngresoEgreso) {
+    public ServicioEmpleado(
+            RepositorioEmpleados repositorioEmpleados,
+            RepositorioPuestos repositorioPuestos,
+            RepositorioIngresoEgreso repositorioIngresoEgreso,
+            ServicioCuenta servicioCuenta
+    ) {
         this.repositorioEmpleados = repositorioEmpleados;
         this.repositorioPuestos = repositorioPuestos;
         this.repositorioIngresoEgreso = repositorioIngresoEgreso;
+        this.servicioCuenta = servicioCuenta;
     }
 
     public List<EmpleadoDTO> listar() {
@@ -46,7 +53,7 @@ public class ServicioEmpleado {
         return EmpleadoMapper.toDTO(empleado);
     }
 
-    public EmpleadoDTO crear(EmpleadoDTO dto) {
+    public EmpleadoDTO crear(EmpleadoDTO dto, String contrasena) {
         Empleado empleado = EmpleadoMapper.fromDTO(dto);
 
         Puesto puesto = repositorioPuestos.findById(dto.getPuesto().getId()).orElseThrow(
@@ -69,6 +76,8 @@ public class ServicioEmpleado {
         ingresoEgreso.setPuesto(puesto);
         ingresoEgreso.setCreadoEn(LocalDate.now());
         repositorioIngresoEgreso.save(ingresoEgreso);
+
+        servicioCuenta.registrar(empleado.getDni(), contrasena);
 
         return nuevoEmpleadoDTO;
     }

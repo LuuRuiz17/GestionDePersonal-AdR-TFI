@@ -15,7 +15,6 @@ import java.util.function.Function;
 
 @Component
 public class JwtUtil {
-
     private final Key key;
     private final long EXPIRATION_MS = 1000L * 60 * 60; // 1h
 

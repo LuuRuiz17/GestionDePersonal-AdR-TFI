@@ -3,6 +3,7 @@ package com.adminrec.tfi.services;
 import com.adminrec.tfi.entities.Cuenta;
 import com.adminrec.tfi.entities.Empleado;
 import com.adminrec.tfi.exceptions.CredencialesInvalidasException;
+import com.adminrec.tfi.exceptions.CuentaExistenteException;
 import com.adminrec.tfi.exceptions.EmpleadoInexistenteException;
 import com.adminrec.tfi.interfaces.RepositorioCuentas;
 import com.adminrec.tfi.interfaces.RepositorioEmpleados;
@@ -47,6 +48,24 @@ public class ServicioCuenta {
         ) throw new CredencialesInvalidasException("Usuario o contraseña inválidos");
 
         return cuenta;
+    }
+
+    public void registrar(Integer dni, String contrasena) {
+        Cuenta cuenta = new Cuenta();
+
+        Empleado empleado = repositorioEmpleados.findByDni(dni).orElseThrow(
+                () -> new EmpleadoInexistenteException("El empleado con el dni " +  dni + " no existe")
+        );
+
+        Cuenta existencia = repositorioCuentas.findByEmpleado_Dni(empleado.getDni());
+
+        if (existencia != null) throw new CuentaExistenteException("El empleado con el dni " +  dni + " ya tiene una cuenta registrada");
+
+        cuenta.setEmpleado(empleado);
+        cuenta.setContrasena(passwordEncoder.encode(contrasena));
+
+        cuenta.setRol(empleado.isEsSupervisorDeSector()? Rol.SUPERVISOR : Rol.EMPLOYEE);
+        repositorioCuentas.save(cuenta);
     }
 
     public Empleado obtenerEmpleadoAsociado(Integer dni) {

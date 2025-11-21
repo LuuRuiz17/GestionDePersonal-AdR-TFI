@@ -8,7 +8,7 @@ public class AsistenciaMapper {
         AsistenciaDTO dto = new AsistenciaDTO();
 
         dto.setId(asistencia.getId());
-        dto.setFecha(asistencia.getCreadoEn().toLocalDate());
+        dto.setFecha(asistencia.getCreadoEn());
 
         return dto;
     }

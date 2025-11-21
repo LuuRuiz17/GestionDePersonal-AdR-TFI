@@ -2,7 +2,6 @@ package com.adminrec.tfi.controllers;
 
 import com.adminrec.tfi.services.ServicioEmpleado;
 import com.adminrec.tfi.util.dtos.entities.AsistenciaDTO;
-import com.adminrec.tfi.util.dtos.entities.DetalleEmpleadoDTO;
 import com.adminrec.tfi.util.dtos.entities.EmpleadoDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,16 +16,16 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/salaries")
-public class SalariesCotroller {
+public class SalariesController {
     private final ServicioEmpleado servicio;
 
-    public SalariesCotroller(ServicioEmpleado servicio) {
+    public SalariesController(ServicioEmpleado servicio) {
         this.servicio = servicio;
     }
 
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERVISOR')")
     @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> listarEmpleados() {
+    public ResponseEntity<?> listarEmpleados() {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -52,6 +51,23 @@ public class SalariesCotroller {
             List<AsistenciaDTO> asistencias = servicio.obtenerAsistencias(idEmpleado);
             response.put("status", "success");
             response.put("asistencias", asistencias);
+
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("status", "error");
+            response.put("mensaje", e.getMessage());
+
+            return ResponseEntity.badRequest().body(response);
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/report")
+    public ResponseEntity<?> obtenerInformacionParaReporte() {
+        Map<String, Object> response = new HashMap<>();
+
+        try {
+            response.put("status", "success");
 
             return ResponseEntity.ok(response);
         } catch (Exception e) {

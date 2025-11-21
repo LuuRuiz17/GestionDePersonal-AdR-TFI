@@ -31,7 +31,7 @@ public class IngresoEgreso {
 
     @Column(name = "creado_en", updatable = false)
     private LocalDate creadoEn;
-    @UpdateTimestamp
+
     @Column(name = "actualizado_en")
     private LocalDate actualizadoEn;
 }

@@ -19,13 +19,11 @@ public class SupervisorController {
         this.servicio = servicio;
     }
 
-    private record SupervisoresPayload(
-            List<Long> idsSupervisores
-    ) {}
+    public record SupervisoresPayload(List<Long> idsSupervisores) {}
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> listar() {
+    public ResponseEntity<?> listar() {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -44,7 +42,7 @@ public class SupervisorController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscarUno(@PathVariable Long id) {
+    public ResponseEntity<?> buscarUno(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
 
         try {

@@ -22,7 +22,7 @@ public class JobPositionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> listar() {
+    public ResponseEntity<?> listar() {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -41,7 +41,7 @@ public class JobPositionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscarUno(@PathVariable Long id) {
+    public ResponseEntity<?> buscarUno(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<String, Object>();
 
         try {
@@ -60,7 +60,7 @@ public class JobPositionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/")
-    public ResponseEntity<Map<String, Object>> crear(@RequestBody PuestoDTO dto) {
+    public ResponseEntity<?> crear(@RequestBody PuestoDTO dto) {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -79,7 +79,7 @@ public class JobPositionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody PuestoDTO dto) {
+    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody PuestoDTO dto) {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -98,7 +98,7 @@ public class JobPositionController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
 
         try {

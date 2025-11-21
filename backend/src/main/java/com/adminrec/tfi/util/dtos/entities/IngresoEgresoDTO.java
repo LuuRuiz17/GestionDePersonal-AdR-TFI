@@ -1,17 +1,20 @@
 package com.adminrec.tfi.util.dtos.entities;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class IngresoEgresoDTO {
     private Long id;
-    @NotNull
-    private EmpleadoDTO empleado;
-    @NotNull
-    private PuestoDTO puesto;
+    private String nombreCompleto;
+    private Integer dni;
+    private String nombrePuesto;
+    private String nombreSector;
+    private LocalDate fechaIngreso;
+    private LocalDate fechaSalida;
 }

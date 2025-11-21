@@ -21,12 +21,12 @@ public class RequestController {
         this.servicio = servicio;
     }
 
-    private record EstadoPayload(String estado) {}
+    public record EstadoPayload(String estado) {}
 
     // Lista todas las solicitudes que realizo un empleado
     @PreAuthorize("hasRole('EMPLOYEE')")
     @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> listarParaUnEmpleado() {
+    public ResponseEntity<?> listarParaUnEmpleado() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Integer dni = Integer.valueOf(auth.getName());
 
@@ -49,7 +49,7 @@ public class RequestController {
 
     @PreAuthorize("hasRole('EMPLOYEE')")
     @PostMapping("/")
-    public ResponseEntity<Map<String, Object>> crear(@RequestBody SolicitudDTO dto) {
+    public ResponseEntity<?> crear(@RequestBody SolicitudDTO dto) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Integer dni = Integer.valueOf(auth.getName());
 
@@ -72,7 +72,7 @@ public class RequestController {
     // Lista todas las solicitudes del sector al que pertenece el supervisor
     @PreAuthorize("hasRole('SUPERVISOR')")
     @GetMapping("/all")
-    public ResponseEntity<Map<String, Object>> listarTodas() {
+    public ResponseEntity<?> listarTodas() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         Integer dni = Integer.valueOf(auth.getName());
 
@@ -94,11 +94,11 @@ public class RequestController {
 
     @PreAuthorize("hasRole('SUPERVISOR')")
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> cambiarEstadoSolicitud(@RequestBody EstadoPayload estado, @PathVariable Long id) {
+    public ResponseEntity<?> cambiarEstadoSolicitud(@RequestBody EstadoPayload estado, @PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
 
         try {
-            SolicitudDTO solicitud = servicio.cambiarEstado(id, estado.estado);
+            SolicitudDTO solicitud = servicio.cambiarEstado(id, estado.estado());
             response.put("status", "success");
             response.put("solicitud", solicitud);
 

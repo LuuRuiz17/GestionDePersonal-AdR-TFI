@@ -38,6 +38,7 @@ public class ServicioAsistencia {
         if (asistenciasHoy.isEmpty()) {
             Asistencia asistencia = new Asistencia();
             asistencia.setEmpleado(empleado);
+            asistencia.setCreadoEn(LocalDateTime.now());
             repositorio.save(asistencia);
 
             return AsistenciaMapper.toDTO(asistencia);

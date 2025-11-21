@@ -24,7 +24,7 @@ public class SectorController {
 
     @PreAuthorize("hasRole('SUPERVISOR') or hasRole('EMPLOYEE')")
     @GetMapping("/")
-    public ResponseEntity<Map<String, Object>> listar() {
+    public ResponseEntity<?> listar() {
         Map<String, Object> response = new HashMap<>();
 
         try {
@@ -43,7 +43,7 @@ public class SectorController {
 
     @PreAuthorize("hasRole('SUPERVISOR') or hasRole('EMPLOYEE')")
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscarUno(@PathVariable Long id) {
+    public ResponseEntity<?> buscarUno(@PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
 
         try {

@@ -28,7 +28,7 @@ public class AttendanceController {
 
     @PreAuthorize("hasRole('EMPLOYEE') or hasRole('SUPERVISOR')")
     @PostMapping("/")
-    public ResponseEntity<Map<String, Object>> registrarAsistencia() {
+    public ResponseEntity<?> registrarAsistencia() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Integer dni = Integer.valueOf(authentication.getName());
 
