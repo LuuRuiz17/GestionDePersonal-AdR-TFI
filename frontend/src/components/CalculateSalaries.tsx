@@ -97,8 +97,7 @@ export interface SalaryPayment {
 
 type ViewMode = "list" | "calculate" | "success";
 
-const API_BASE_URL =
-  "https://accompanied-adjusted-pray-association.trycloudflare.com";
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export function CalculateSalaries({
   onBack,

@@ -18,6 +18,9 @@ interface ManagePositionsProps {
   onBack: () => void;
 }
 
+
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function ManagePositions({ onBack }: ManagePositionsProps) {
   const [positions, setPositions] = useState<Position[]>([]);
   const [positionsData, setPositionsData] = useState<any[]>([]); // Guardar datos completos de la API
@@ -32,7 +35,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
       const token = localStorage.getItem('authToken');
       
       try {
-        const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/', {
+        const response = await fetch(API_BASE_URL + '/api/jobpositions/', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -102,7 +105,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
     const token = localStorage.getItem('authToken');
     
     try {
-      const response = await fetch(`https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/${id}`, {
+      const response = await fetch(API_BASE_URL + `/api/jobpositions/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -155,7 +158,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
           horasMinimasTrabajoDiario: position.minDailyHours
         };
 
-        const response = await fetch(`https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/${position.id}`, {
+        const response = await fetch(API_BASE_URL + `/api/jobpositions/${position.id}`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -171,7 +174,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
 
         if (data.status === 'success') {
           // Recargar la lista de puestos
-          const reloadResponse = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/', {
+          const reloadResponse = await fetch(API_BASE_URL + '/api/jobpositions/', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -224,7 +227,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
 
         console.log('Enviando POST a /api/jobpositions/ con body:', positionDTO);
 
-        const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/', {
+        const response = await fetch(API_BASE_URL + '/api/jobpositions/', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -240,7 +243,7 @@ export function ManagePositions({ onBack }: ManagePositionsProps) {
 
         if (data.status === 'success' || data.puesto) {
           // Recargar la lista de puestos
-          const reloadResponse = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/', {
+          const reloadResponse = await fetch(API_BASE_URL + '/api/jobpositions/', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

@@ -19,6 +19,8 @@ interface RegisterPasswordProps {
   onCancel: () => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function RegisterPassword({ employee, onComplete, onCancel }: RegisterPasswordProps) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -87,7 +89,7 @@ export function RegisterPassword({ employee, onComplete, onCancel }: RegisterPas
 
       console.log('Enviando solicitud POST a /api/employees:', requestData);
 
-      const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/employees/', {
+      const response = await fetch(API_BASE_URL + '/api/employees/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

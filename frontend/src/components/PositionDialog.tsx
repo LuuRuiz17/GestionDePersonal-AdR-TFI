@@ -32,6 +32,8 @@ interface ApiSector {
   nombre: string;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function PositionDialog({ isOpen, position, onSave, onClose, existingSectors }: PositionDialogProps) {
   const [formData, setFormData] = useState<Position>({
     id: '',
@@ -53,7 +55,7 @@ export function PositionDialog({ isOpen, position, onSave, onClose, existingSect
         const token = localStorage.getItem('authToken');
         
         try {
-          const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/supervisors/', {
+          const response = await fetch(API_BASE_URL + '/api/supervisors/', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,

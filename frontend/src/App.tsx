@@ -26,6 +26,7 @@ export type ViewType =
   | "generate-request";
 
 export default function App() {
+  
   const [currentView, setCurrentView] =
     useState<ViewType>("menu");
   const [isLoggedIn, setIsLoggedIn] = useState(false);

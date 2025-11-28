@@ -43,6 +43,8 @@ interface ConsultSectorProps {
   onBack: () => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function ConsultSector({ onBack }: ConsultSectorProps) {
   const [sectors, setSectors] = useState<ApiSector[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -57,7 +59,7 @@ export function ConsultSector({ onBack }: ConsultSectorProps) {
       const token = localStorage.getItem('authToken');
       
       try {
-        const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/sectors/', {
+        const response = await fetch(API_BASE_URL + '/api/sectors/', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

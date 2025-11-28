@@ -16,6 +16,9 @@ interface LoginProps {
   onLogin: (dni: string, employeeName: string) => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export function Login({ onLogin }: LoginProps) {
   const [dni, setDni] = useState('');
   const [password, setPassword] = useState('');
@@ -53,7 +56,7 @@ export function Login({ onLogin }: LoginProps) {
     setIsLoading(true);
 
     // Realizar petición a la API
-    fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/login', {
+    fetch(API_BASE_URL + '/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

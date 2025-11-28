@@ -37,6 +37,8 @@ export interface Attendance {
   date: string; // Fecha en formato YYYY-MM-DD
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function RegisterAttendance({ onBack }: RegisterAttendanceProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -80,7 +82,7 @@ export function RegisterAttendance({ onBack }: RegisterAttendanceProps) {
 
     setIsLoading(true);
     try {
-      const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/attendance/all', {
+      const response = await fetch(API_BASE_URL + '/api/attendance/all', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -133,7 +135,7 @@ export function RegisterAttendance({ onBack }: RegisterAttendanceProps) {
 
     setIsLoading(true);
     try {
-      const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/attendance/', {
+      const response = await fetch(API_BASE_URL + '/api/attendance/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

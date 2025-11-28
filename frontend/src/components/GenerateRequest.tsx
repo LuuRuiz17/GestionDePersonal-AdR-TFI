@@ -49,6 +49,8 @@ export interface Request {
 
 type ViewMode = 'list' | 'form' | 'success';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
 export function GenerateRequest({ onBack }: GenerateRequestProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('list');
   const [requestType, setRequestType] = useState<string>('');
@@ -83,7 +85,7 @@ export function GenerateRequest({ onBack }: GenerateRequestProps) {
     }
 
     try {
-      const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/requests/', {
+      const response = await fetch(API_BASE_URL + '/api/requests/', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -197,7 +199,7 @@ export function GenerateRequest({ onBack }: GenerateRequestProps) {
     console.log('Enviando solicitud a la API:', requestData);
 
     try {
-      const response = await fetch('https://accompanied-adjusted-pray-association.trycloudflare.com/api/requests', {
+      const response = await fetch(API_BASE_URL + '/api/requests', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

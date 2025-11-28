@@ -51,6 +51,9 @@ interface ManageEmployeesProps {
   onBack: () => void;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+
 export function ManageEmployees({
   onBack,
 }: ManageEmployeesProps) {
@@ -79,7 +82,7 @@ export function ManageEmployees({
 
       try {
         const response = await fetch(
-          "https://accompanied-adjusted-pray-association.trycloudflare.com/api/employees/",
+          API_BASE_URL + "/api/employees/",
           {
             method: "GET",
             headers: {
@@ -140,7 +143,7 @@ export function ManageEmployees({
 
       try {
         const response = await fetch(
-          "https://accompanied-adjusted-pray-association.trycloudflare.com/api/jobpositions/",
+          API_BASE_URL + "/api/jobpositions/",
           {
             method: "GET",
             headers: {
@@ -189,7 +192,7 @@ export function ManageEmployees({
 
     try {
       const response = await fetch(
-        "https://accompanied-adjusted-pray-association.trycloudflare.com/api/employees/",
+        API_BASE_URL + "/api/employees/",
         {
           method: "GET",
           headers: {
@@ -264,7 +267,7 @@ export function ManageEmployees({
 
     try {
       const response = await fetch(
-        `https://accompanied-adjusted-pray-association.trycloudflare.com/api/employees/${id}`,
+        API_BASE_URL + `/api/employees/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -329,7 +332,7 @@ export function ManageEmployees({
         };
 
         const response = await fetch(
-          `https://accompanied-adjusted-pray-association.trycloudflare.com/api/employees/${employee.id}`,
+          API_BASE_URL + `/api/employees/${employee.id}`,
           {
             method: "PUT",
             headers: {
